@@ -1,5 +1,7 @@
 <div class="container">
     <h2>En ce moment</h2>
     <h2>La liste de vos volontaires</h2>
-    <app-volunteer-info *ngFor="let volunteer of volunteers"></app-volunteer-info>
+    <div class="card" *ngFor="let volunteer of volunteers">
+        <app-volunteer-info [volunteer]='volunteer'></app-volunteer-info>
+    </div>
 </div>

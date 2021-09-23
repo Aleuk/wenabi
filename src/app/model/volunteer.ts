@@ -1,3 +1,4 @@
+import { Entry } from "./entry";
 import { Status } from "./status";
 
 export class Volunteer {
@@ -15,6 +16,7 @@ export class Volunteer {
     public streetName: string = '';
     public coordinatorFirstName: string = '';
     public coordinatorLastName: string = '';
+    public entries: Entry[] = [];
 
     constructor(
         id: string,
@@ -30,7 +32,8 @@ export class Volunteer {
         postalCode: string,
         streetName: string,
         coordinatorFirstName: string,
-        coordinatorLastName: string){
+        coordinatorLastName: string,
+        entries: Entry[]){
             this.id = id;
             this.createdDate = createdDate;
             this.status = status;
@@ -45,6 +48,7 @@ export class Volunteer {
             this.streetName = streetName;
             this.coordinatorFirstName = coordinatorFirstName;
             this.coordinatorLastName = coordinatorLastName;
+            this.entries = entries;
         }
 
     static convert(vol: any): Volunteer {
@@ -62,7 +66,8 @@ export class Volunteer {
             vol.initiative.postalCode,
             vol.initiative.streetName,
             vol.coordinatorProfile.firstname,
-            vol.coordinatorProfile.lastname
+            vol.coordinatorProfile.lastname,
+            vol.entries ? vol.entries : []
         );
     }
 }

@@ -1,1 +1,24 @@
-<p>volunteer-info works!</p>
+<div class="info-card">
+    <div class="row">
+        <div class="col-2">
+            <img [src]="'assets/img/'+volunteer.id+'.png'" width="150"/>
+            <p>{{ volunteer.id }}</p>
+            <p>Inscrit le {{ volunteer.createdDate }}</p>
+        </div>
+        <div class="col-3 card-id">
+            <p>{{ volunteer | fullname }}</p>
+            <p>{{ volunteer.companyName }}</p>
+            <p><fa-icon [icon]="faHandPointRight"></fa-icon>{{ volunteer.title }}</p>
+            <p><fa-icon [icon]="faMapMarkerAlt"></fa-icon>{{ volunteer.city }}</p>
+            <p><fa-icon [icon]="faUser"></fa-icon>{{ volunteer | coordinatorFullname }}</p>
+        </div>
+        <div class="col-7">
+            Statut: {{ volunteer.status | status}}
+            <!-- entries -->
+            <div class="tab-entries" *ngIf="volunteer.entries.length > 0">
+                <app-volunteer-entries [entries]="volunteer.entries"></app-volunteer-entries>
+            </div>
+            <!-- description -->
+        </div>
+    </div>
+</div>

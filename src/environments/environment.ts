@@ -6,7 +6,8 @@ export const environment = {
   production: false,
   baseUrl: 'https://6143a763c5b553001717d062.mockapi.io/api',
   api: {
-    wishes: '/wishes'
+    wishes: '/wishes',
+    stats: '/stats'
   }
 };
 

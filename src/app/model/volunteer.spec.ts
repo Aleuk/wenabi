@@ -16,7 +16,8 @@ describe('Volunteer', () => {
       '',
       '',
       '',
-      ''
+      '',
+      []
   )).toBeTruthy();
   });
 });
