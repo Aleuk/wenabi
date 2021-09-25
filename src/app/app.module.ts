@@ -15,6 +15,8 @@ import { CoordinatorFullnamePipe } from './pipes/coordinator-fullname.pipe';
 import { StatusPipe } from './pipes/status.pipe';
 import { VolunteerEntriesComponent } from './components/volunteer-entries/volunteer-entries.component';
 import { EntryDatePipe } from './pipes/entry-date.pipe';
+import { DateFormatPipe } from './pipes/date-format.pipe';
+import { LabelComponent } from './components/common/label/label.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { EntryDatePipe } from './pipes/entry-date.pipe';
     CoordinatorFullnamePipe,
     StatusPipe,
     VolunteerEntriesComponent,
-    EntryDatePipe
+    EntryDatePipe,
+    DateFormatPipe,
+    LabelComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,41 @@
+.border-label {
+    padding: 5px 0px 5px 0px;
+    margin-left: 10px;
+    width: 160px;
+    color: #404040;
+    background: #FFFFFF;
+    border-radius: 40px;
+    box-shadow: 1px 1px 15px #00000029;
+}
+
+.circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background: grey;
+    margin-right: 10px;
+    margin : auto ;
+}
+
+.pink-circle{
+    background: #FF000080;
+}
+.red-circle{
+    background: #FF0000;
+}
+.orange-circle{
+    background: #FFC000;
+}
+.yellow-circle{
+    background: #FFC00080;
+}
+.green-circle{
+    background: #92D050;
+}
+.dark-green-circle{
+    background: #00B050;
+}
+
+.status-label {
+    margin : auto ;
+}
