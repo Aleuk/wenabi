@@ -9,6 +9,6 @@
         'dark-green-circle': st.status==='USER_HAS_PARTICIPATED'
         }"
         [style.width]="(st.count*100/nbVolunteers)+'%'"
-        [title]="st.status + ' (' + st.count + ')'">
+        [title]="_statusPipe.transform(st.status) + ' (' + st.count + ')'">
     </div>
   </div>

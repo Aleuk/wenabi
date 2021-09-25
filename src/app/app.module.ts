@@ -41,7 +41,7 @@ import { SegmentedBarComponent } from './components/common/segmented-bar/segment
     HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [StatusPipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
