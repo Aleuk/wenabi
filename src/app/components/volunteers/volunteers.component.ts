@@ -12,7 +12,9 @@ import * as _ from 'lodash';
 export class VolunteersComponent implements OnInit {
 
   public volunteers: Volunteer[] = [];
+  private volunteersReference: Volunteer[] = []; // contains all volunteers for front filtering
   public status: Status[] = [];
+  private disabledStatus: string[] = []; // contains the status to filter
   public nbVolunteers: number = 0;
 
   constructor(private _wishes: WishesService) { }
@@ -25,6 +27,7 @@ export class VolunteersComponent implements OnInit {
           let volunteer = Volunteer.convert(element);
           this.volunteers.push(volunteer);
         });
+        this.volunteersReference = _.assign([],this.volunteers);
       }
     );
 
@@ -41,7 +44,17 @@ export class VolunteersComponent implements OnInit {
   }
 
   onStatusClicked(status: Status, active: boolean) {
-    console.log("clicked", status, active)
+    if(!active) {
+      this.disabledStatus.push(status.status);
+    } else {
+      _.remove(this.disabledStatus, (n) => {
+        return n == status.status;
+      })
+    }
+    this.volunteers.splice(0,this.volunteers.length);
+    this.volunteers = (_.filter(this.volunteersReference, (o) => {
+      return !_.includes(this.disabledStatus, o.status);
+    }))
   }
 
 }
