@@ -1,18 +1,18 @@
 <div class="info-card">
     <div class="row">
-        <div class="col-2 volunteer-identity">
+        <div class="col-md-2 volunteer-identity">
             <img class="p-id" [src]="'assets/img/'+volunteer.id+'.png'"/>
             <p class="p-id">{{ volunteer.id }}</p>
             <p class="light-label">Inscrit le : {{ volunteer.createdDate | dateFormat }}</p>
         </div>
-        <div class="col-3 card-id">
+        <div class="col-md-3 card-id">
             <p class="p-volunteer-name">{{ volunteer | fullname }}</p>
             <p class="p-company-name">{{ volunteer.companyName }}</p>
             <p class="p-li-volunteer"><fa-icon [icon]="faHandPointRight"></fa-icon>{{ volunteer.title }}</p>
             <p class="p-li-volunteer"><fa-icon [icon]="faMapMarkerAlt"></fa-icon>{{ volunteer.city }}</p>
             <p class="p-li-volunteer"><fa-icon [icon]="faUser"></fa-icon>{{ volunteer | coordinatorFullname }}</p>
         </div>
-        <div class="col-7">
+        <div class="col-md-7">
             <div class="div_align">
                 <p class="light-label status-label">Statut:</p> 
                 <app-label [status]="{status:volunteer.status, count:null}"></app-label>
