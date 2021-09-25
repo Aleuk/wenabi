@@ -1,5 +1,10 @@
 <div class="container">
     <h2>En ce moment</h2>
+    <h1>{{ nbVolunteers }} inscriptions</h1>
+    <h3>Suivez les inscriptions en fonction de leur statut :</h3>
+    <div class="status-list">
+        <app-label *ngFor="let st of status" [status]="st" (onStatusClicked)="onStatusClicked(st, $event)"></app-label>
+    </div>
     <h2>La liste de vos volontaires</h2>
     <div class="card" *ngFor="let volunteer of volunteers">
         <app-volunteer-info [volunteer]='volunteer'></app-volunteer-info>

@@ -15,7 +15,7 @@
         <div class="col-7">
             <div class="div_align">
                 <p class="light-label status-label">Statut:</p> 
-                <app-label [status]="volunteer.status"></app-label>
+                <app-label [status]="{status:volunteer.status, count:null}"></app-label>
             </div>
             <!-- entries -->
             <div class="tab-entries" *ngIf="volunteer.entries.length > 0">

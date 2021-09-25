@@ -1,5 +1,4 @@
 import { Entry } from "./entry";
-import { Status } from "./status";
 
 export class Volunteer {
     public id: string = '';

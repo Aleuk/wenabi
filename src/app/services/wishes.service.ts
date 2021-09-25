@@ -13,4 +13,8 @@ export class WishesService {
   public getWishes():Observable<any>{
     return this._http.get<any>(environment.baseUrl + environment.api.wishes)
   }
+
+  public getStats():Observable<any>{
+    return this._http.get<any>(environment.baseUrl + environment.api.stats)
+  }
 }

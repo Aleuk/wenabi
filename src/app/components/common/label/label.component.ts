@@ -1,4 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Status } from 'src/app/model/status';
 
 @Component({
   selector: 'app-label',
@@ -7,10 +8,21 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class LabelComponent implements OnInit {
 
-  @Input() status: string = '';
+  @Input() status: Status|null = null;
+  @Output() onStatusClicked = new EventEmitter<boolean>();
+  private active:boolean = true;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onClicked() {
+    this.active = !this.active;
+    // if count is null, the label is not clickable
+    if(this.status.count !== null) {
+      this.onStatusClicked.emit(this.active);
+    }
   }
 
 }

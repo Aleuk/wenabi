@@ -1,14 +1,17 @@
-<div class="div_align border-label">
+<div class="div_align border-label" [ngClass]="{'clickable':status.count !== null, 'disabled':!active}" (click)="onClicked()">
         <div class="circle" [ngClass]="{
-            'pink-circle': status==='APPLICATION',
-            'red-circle': status==='DISCUSSION',
-            'orange-circle': status==='WAITING_ASSOCIATION_VALIDATION',
-            'yellow-circle': status==='WAITING_MANAGER_VALIDATION',
-            'green-circle': status==='IN_PROGRESS',
-            'dark-green-circle': status==='USER_HAS_PARTICIPATED'
+            'pink-circle': status.status==='APPLICATION',
+            'red-circle': status.status==='DISCUSSION',
+            'orange-circle': status.status==='WAITING_ASSOCIATION_VALIDATION',
+            'yellow-circle': status.status==='WAITING_MANAGER_VALIDATION',
+            'green-circle': status.status==='IN_PROGRESS',
+            'dark-green-circle': status.status==='USER_HAS_PARTICIPATED'
             }">
         </div>
         <div class="status-label">
-                {{ status | status }}
+            {{ status.status | status }}
+        </div>
+        <div class="status-count" *ngIf="status.count !== null && status.count > 0">
+            {{ status.count }}
         </div>
 </div>
