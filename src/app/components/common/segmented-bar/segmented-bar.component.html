@@ -1,0 +1,14 @@
+<div class="container" *ngIf="nbVolunteers > 0">
+  <div class="progress-segment">
+    <div *ngFor="let st of status" class="item" [ngClass]="{
+        'pink-circle': st.status==='APPLICATION',
+        'red-circle': st.status==='DISCUSSION',
+        'orange-circle': st.status==='WAITING_ASSOCIATION_VALIDATION',
+        'yellow-circle': st.status==='WAITING_MANAGER_VALIDATION',
+        'green-circle': st.status==='IN_PROGRESS',
+        'dark-green-circle': st.status==='USER_HAS_PARTICIPATED'
+        }"
+        [style.width]="(st.count*100/nbVolunteers)+'%'"
+        [title]="st.status + ' (' + st.count + ')'">
+    </div>
+  </div>

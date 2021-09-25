@@ -1,6 +1,7 @@
 <div class="container">
     <h2>En ce moment</h2>
     <h1>{{ nbVolunteers }} inscriptions</h1>
+    <app-segmented-bar [status]="status" [nbVolunteers]="nbVolunteers"></app-segmented-bar>
     <h3>Suivez les inscriptions en fonction de leur statut :</h3>
     <div class="status-list">
         <app-label *ngFor="let st of status" [status]="st" (onStatusClicked)="onStatusClicked(st, $event)"></app-label>

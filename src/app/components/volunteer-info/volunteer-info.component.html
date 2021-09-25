@@ -1,7 +1,7 @@
 <div class="info-card">
     <div class="row">
         <div class="col-2 volunteer-identity">
-            <img class="p-id" [src]="'assets/img/'+volunteer.id+'.png'" width="150"/>
+            <img class="p-id" [src]="'assets/img/'+volunteer.id+'.png'"/>
             <p class="p-id">{{ volunteer.id }}</p>
             <p class="light-label">Inscrit le : {{ volunteer.createdDate | dateFormat }}</p>
         </div>
@@ -21,7 +21,6 @@
             <div class="tab-entries" *ngIf="volunteer.entries.length > 0">
                 <app-volunteer-entries [entries]="volunteer.entries"></app-volunteer-entries>
             </div>
-            <!-- description -->
         </div>
     </div>
 </div>

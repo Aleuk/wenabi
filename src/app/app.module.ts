@@ -17,6 +17,7 @@ import { VolunteerEntriesComponent } from './components/volunteer-entries/volunt
 import { EntryDatePipe } from './pipes/entry-date.pipe';
 import { DateFormatPipe } from './pipes/date-format.pipe';
 import { LabelComponent } from './components/common/label/label.component';
+import { SegmentedBarComponent } from './components/common/segmented-bar/segmented-bar.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { LabelComponent } from './components/common/label/label.component';
     VolunteerEntriesComponent,
     EntryDatePipe,
     DateFormatPipe,
-    LabelComponent
+    LabelComponent,
+    SegmentedBarComponent
   ],
   imports: [
     BrowserModule,

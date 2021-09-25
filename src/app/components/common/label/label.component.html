@@ -1,4 +1,4 @@
-<div class="div_align border-label" [ngClass]="{'clickable':status.count !== null, 'disabled':!active}" (click)="onClicked()">
+<div class="div_align border-label" [ngClass]="{'clickable':status.count !== null, 'disabled':status.count !== null && !active}" (click)="onClicked()">
         <div class="circle" [ngClass]="{
             'pink-circle': status.status==='APPLICATION',
             'red-circle': status.status==='DISCUSSION',
