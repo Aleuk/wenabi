@@ -1,8 +1,16 @@
 import { StatusPipe } from './status.pipe';
 
-describe('StatusPipe', () => {
+fdescribe('StatusPipe', () => {
+  const pipe = new StatusPipe();
+
   it('create an instance', () => {
-    const pipe = new StatusPipe();
     expect(pipe).toBeTruthy();
   });
+
+  it('should get the right status', () => {
+    const result = pipe.transform('APPLICATION')
+    expect(result).toEqual('Candidature');
+  }
+
+  );
 });
